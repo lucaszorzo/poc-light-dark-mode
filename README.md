@@ -6,4 +6,5 @@ A única biblioteca externa utilizada é "react-router-dom" para facilitar a cri
 
 Para testar o projeto
 > npm install
+
 > npm run dev
