@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import ThemeToggle from '../components/ThemeToggleButton';
+import ThemeToggle from '../../components/ThemeToggleButton';
 import { Link } from 'react-router-dom';
 
 const PageOne = () => {

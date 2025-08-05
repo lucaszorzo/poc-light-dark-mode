@@ -1,4 +1,4 @@
-import { useTheme } from '../../viewmodel/customHooks/useTheme';
+import { useTheme } from '../customHooks/useTheme';
 
 const ThemeToggleButton = () => {
   const { theme, toggleTheme } = useTheme();
