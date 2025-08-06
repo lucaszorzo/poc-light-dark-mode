@@ -1,0 +1,67 @@
+@use "./variables.styles.scss" as *;
+
+@mixin hidden-scrollbar {
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+// Flexbox
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-end {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+@mixin flex($justify: center, $align: center, $direction: row, $wrap: nowrap) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+}
+
+@mixin typography($size, $weight: 400, $lineHeight: 1.4, $transform: none, $spacing: normal) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $lineHeight;
+  text-transform: $transform;
+  letter-spacing: $spacing;
+}
+
+// Responsive
+@mixin breakpoint($breakpoint, $direction: min) {
+  @if $breakpoint == xs {
+    @content;
+  } @else if $breakpoint == sm {
+    @media only screen and (#{$direction}-width: $sm) {
+      @content;
+    }
+  } @else if $breakpoint == md {
+    @media only screen and (#{$direction}-width: $md) {
+      @content;
+    }
+  } @else if $breakpoint == lg {
+    @media only screen and (#{$direction}-width: $lg) {
+      @content;
+    }
+  } @else if $breakpoint == xl {
+    @media only screen and (#{$direction}-width: $xl) {
+      @content;
+    }
+  } @else {
+    @error "Breakpoints possiveis: xs, sm, md, lg ou xl.";
+  }
+}

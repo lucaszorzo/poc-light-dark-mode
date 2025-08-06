@@ -1,0 +1,33 @@
+$primary-font: 'TT Firs Neue Trl';
+
+// colors
+$main-color: #16ded0;
+$white: #fff;
+$black: #000;
+$red: #de3e16;
+
+$gray-100: #f5f6f6;
+$gray-300: #efece8;
+$gray-400: #c1c1c1;
+$gray-500: #7a797a;
+$gray-600: #585659;
+$gray-700: #272727;
+$gray-800: #2e2e2e;
+
+// width and height
+$navbar-width: 5.5rem;
+
+$footer-width: calc(100vw - var(--navbar-width));
+$footer-height: 4.5rem;
+
+$header-width: calc(100vw - var(--navbar-width));
+$header-height: 4.0625rem;
+
+$main-width: calc(100vw - var(--navbar-width));
+$main-height: calc(100dvh - var(--header-height) - var(--footer-height));
+
+$xs: 0px;
+$sm: 481px;
+$md: 769px;
+$lg: 1025px;
+$xl: 1201px;

@@ -1,13 +1,13 @@
 import { useState } from 'react';
-import ThemeToggle from '../../components/ThemeToggleButton';
+import {ThemeToggleButton} from 'bm-design-system';
 import { Link } from 'react-router-dom';
 
 const PageTwo = () => {
   const [text, setText] = useState('');
 
   return (
-    <div>
-      <ThemeToggle />
+    <div >
+      <ThemeToggleButton />
       <h1>Page Two</h1>
       <input
         type="text"

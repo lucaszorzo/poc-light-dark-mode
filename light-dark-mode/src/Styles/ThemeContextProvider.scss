@@ -1,0 +1,37 @@
+@use '../Styles/themes.styles.scss' as *;
+@use '../Styles/mixins.styles.scss' as *;
+
+.app {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  width: var(--main-width);
+  height: var(--main-height);
+  padding: 1rem;
+  overflow-y: scroll;
+
+  @include breakpoint(md) {
+    padding: 1rem 4rem;
+  }
+
+  @include themed() {
+    background-color: t(body);
+  }
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--scroolbar-color);
+    border-radius: 20px;
+    border: 3px solid var(--scroolbar-color);
+  }
+}

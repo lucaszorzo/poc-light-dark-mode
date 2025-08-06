@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import ThemeToggle from '../../components/ThemeToggleButton';
+import {ThemeToggleButton} from 'bm-design-system';
 import { Link } from 'react-router-dom';
 
 const PageOne = () => {
@@ -7,7 +7,7 @@ const PageOne = () => {
 
   return (
     <div>
-      <ThemeToggle />
+      <ThemeToggleButton />
       <h1>Page One</h1>
       <input
         type="text"

@@ -1,0 +1,100 @@
+@use './variables.styles.scss' as *;
+
+$themes: (
+  dark: (
+    body: $gray-800,
+    text: $white,
+    backgroundNavbar: $gray-600,
+
+    // components
+    border: $white,
+    borderModal: $gray-300,
+    closeModalIcon: $white,
+    titleModal: $white,
+    cardAndTable: $gray-800,
+    progressCard: $gray-600,
+    doneIcon: $white,
+
+    outlinedButton: $main-color,
+    popoverArrow: #383838,
+    paginationBackground: $gray-600,
+
+    // menu
+    inputLabelColor: $white,
+    activeInputLabelColor: $main-color,
+
+    helpModalBackground: $white,
+    helpModalColor: $gray-800,
+
+    // modais
+    errorModalBackground: $white,
+    errorModalColor: $white,
+    errorBtnColor: $black,
+
+    successModalIconColor: $white,
+    successModalColor: $white,
+
+    // home
+    uploadModalBackground: $gray-700,
+  ),
+  light: (
+    body: $gray-300,
+    text: $gray-800,
+    backgroundNavbar: $gray-100,
+
+    // components
+    border: $black,
+    borderModal: $gray-800,
+    closeModalIcon: $gray-800,
+    titleModal: $gray-600,
+    cardAndTable: $gray-100,
+    progressCard: $gray-100,
+    doneIcon: $gray-800,
+
+    outlinedButton: $gray-800,
+    popoverArrow: #DEE7E7,
+    paginationBackground: $gray-100,
+
+    // menu
+    inputLabelColor: $gray-800,
+    activeInputLabelColor: $main-color,
+
+    helpModalBackground: $gray-800,
+    helpModalColor: $main-color,
+
+    // modais
+    errorModalBackground: $gray-800,
+    errorModalColor: $black,
+    errorBtnColor: $main-color,
+
+    successModalIconColor: $main-color,
+    successModalColor: $black,
+
+    // home
+    uploadModalBackground: $white,
+  ),
+);
+
+@mixin themed() {
+  @each $theme, $map in $themes {
+    .theme--#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $value in $map {
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+
+      @content;
+
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function t($key) {
+  @return map-get($theme-map, $key);
+}
